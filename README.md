@@ -10,22 +10,11 @@ In 2026, the fraud landscape has shifted from simple phishing to Agentic "Burst 
 •	GNN Architecture: Preparing the foundation for Graph Neural Networks to score the risk level of account neighborhoods.
 •	Living Defense: An automated pipeline (GitHub Actions) that updates detection signatures monthly against evolving patterns.
 
-🛠️ Installation & Execution
-1.	Setup Environment
-# Clone the repository
-git clone https://github.com/anusha-vaidya/Agentic-Fraud-Detecting-Deep-Fake-Transaction-Signatures-via-GNN.git
-# Enter the directory
-cd Agentic-Fraud-Detecting-Deep-Fake-Transaction-Signatures-via-GNN
-# Install dependencies
-pip install -r requirements.txt
+🛠️ Execution
 
-2.	Generate Data
-python src/generate_data.py
-Note: This process is also automated via GitHub Actions on the first of every month.
-
-3. Execution Pipeline
-The detection logic is broken down into three sequential stages. Open these in Jupyter or VS Code to see the results:
-01_adversarial_detection_EDA.ipynb: Identifies "Burst" signatures using velocity analysis.
-02_graph_network_construction.ipynb: Maps the "Hydra" network to find interconnected account clusters.
-03_unsupervised_anomaly_detection.ipynb: Uses DBSCAN to automatically label suspicious activity without pre-labeled data.
+• git clone https://github.com/anusha-vaidya/Agentic-Fraud-Detecting-Deep-Fake-Transaction-Signatures-via-GNN.git
+• cd Agentic-Fraud-Detecting-Deep-Fake-Transaction-Signatures-via-GNN
+• pip install -r requirements.txt
+• python src/generate_data.py
+• Run notebooks in order: 01 (EDA) -> 02 (Graph) -> 03 (ML)
 
