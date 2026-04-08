@@ -23,3 +23,6 @@ Language: Python
 Data Science: Pandas, NumPy, Scikit-learn
 Graph Learning: PyTorch Geometric (PyG), NetworkX
 DevOps: GitHub Actions
+
+How to Run This:
+
