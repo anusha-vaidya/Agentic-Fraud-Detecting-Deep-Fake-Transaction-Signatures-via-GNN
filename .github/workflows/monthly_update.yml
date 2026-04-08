@@ -1,1 +1,26 @@
+name: Monthly Fraud Signature Update
+on:
+  schedule:
+    - cron: '0 0 1 * *' # This runs at midnight on the 1st of every month
+  workflow_dispatch: # This allows you to also run it manually whenever you want
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas numpy
+      - name: Generate New Signatures
+        run: python src/generate_data.py
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'Automated Bot'
+          git config --global user.email 'bot@github.com'
+          git add data/raw/
+          git commit -m "Automated update: New monthly fraud signatures"
+          git push
